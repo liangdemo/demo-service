@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hello-service
+  profiles:
+    active: dev
+server:
+  port: 2000
+
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11000//eureka/
+---
+spring:
+  profiles: test
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:11000//eureka/
+---
+spring:
+  profiles: prod
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://prodhost:11000//eureka/
+---
